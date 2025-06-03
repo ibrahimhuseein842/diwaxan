@@ -1,0 +1,297 @@
+/* ======================================
+   Login/Logout Pages Styling
+====================================== */
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-black) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animated background */
+.login-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 1px, transparent 1px);
+    background-size: 30px 30px;
+    animation: backgroundMove 20s linear infinite;
+    z-index: 1;
+}
+
+@keyframes backgroundMove {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Logo styling */
+.logo {
+    font-size: 3.5rem;
+    color: var(--primary-yellow);
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 20px var(--primary-yellow);
+    position: relative;
+    z-index: 2;
+    animation: glowPulse 2s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+    0%, 100% { text-shadow: 0 0 20px var(--primary-yellow); }
+    50% { text-shadow: 0 0 40px var(--primary-yellow), 0 0 60px var(--primary-yellow); }
+}
+
+.subtitle {
+    color: var(--light-gray);
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Form styling */
+form {
+    width: 100%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 2;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    color: var(--primary-yellow);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-input {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    border-radius: 12px;
+    color: var(--primary-white);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--primary-yellow);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.login-btn {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(45deg, var(--primary-yellow), #ffed4a);
+    color: var(--primary-black);
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
+}
+
+.login-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Error message styling */
+.error-message {
+    background: linear-gradient(45deg, #ff4444, #cc0000);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    animation: shake 0.5s ease-in-out;
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+/* Back link styling */
+.back-link {
+    color: var(--primary-yellow);
+    text-decoration: none;
+    margin-top: 1.5rem;
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.back-link:hover {
+    color: var(--primary-white);
+    text-shadow: 0 0 10px var(--primary-yellow);
+}
+
+/* Security note styling */
+.security-note {
+    max-width: 400px;
+    margin-top: 2rem;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    border-right: 4px solid var(--primary-yellow);
+    font-size: 0.9rem;
+    color: var(--light-gray);
+    position: relative;
+    z-index: 2;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .logo {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    form {
+        padding: 1.5rem;
+    }
+    
+    .security-note {
+        font-size: 0.8rem;
+    }
+}
+
+
+
+/* Logout Page Styling */
+.logout-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-black) 100%);
+    padding: 2rem;
+}
+
+.logout-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    border-radius: 20px;
+    padding: 3rem;
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    animation: fadeInUp 0.5s ease-out;
+}
+
+.logout-message {
+    margin: 2rem 0;
+}
+
+.logout-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+    animation: wave 1s infinite;
+}
+
+@keyframes wave {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(20deg); }
+}
+
+.logout-message h2 {
+    color: var(--primary-yellow);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.logout-message p {
+    color: var(--light-gray);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.redirect-text {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}
+
+.login-link {
+    display: inline-block;
+    color: var(--primary-yellow);
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid var(--primary-yellow);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.login-link:hover {
+    background: var(--primary-yellow);
+    color: var(--primary-black);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .logout-card {
+        padding: 2rem;
+    }
+    
+    .logout-icon {
+        font-size: 3rem;
+    }
+    
+    .logout-message h2 {
+        font-size: 1.5rem;
+    }
+    
+    .logout-message p {
+        font-size: 1rem;
+    }
+}
